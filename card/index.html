@@ -75,6 +75,7 @@
 <script>
 $(function() { "use strict";
 
+// From http://www.math.ucla.edu/~tom/distributions/normal.html
 function normalcdf(X){   //HASTINGS.  MAX ERROR = .000001
 	var T=1/(1+.2316419*Math.abs(X));
 	var D=.3989423*Math.exp(-X*X/2);
