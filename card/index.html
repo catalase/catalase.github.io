@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Nar 카디널리티 추정</title>
+	<style>
+
+		dt {
+			display: inline;
+		}
+
+		dd {
+			margin: auto 10px auto 5px;
+			display: inline;
+		}
+
+		input[type="text"] {
+			padding: 10px;
+			text-align: right;
+		}
+
+		#data {
+			margin-top: 10px;
+			position: relative;
+			text-align: center;
+			border-bottom: 1px solid;
+		}
+
+		#data>div {
+			display: inline-block;
+		}
+
+		#itemList {
+			margin-top: 20px;
+			line-height: 500%;
+		}
+
+		.item {
+			border: 1px solid;
+			margin: 10px;
+			font-size: 44px;
+			text-align: center;
+		}
+
+		span.P {
+			color: red;
+			margin-right: 20px;
+		}
+	</style>
+</head>
+<body>
+<div id="data">
+	<div>
+		<p>Put experimental value in box below</p>
+		<form>
+			<dl>
+				<label>
+					<dt>a</dt>
+					<dd><input type="text" id="data-a"></dd>
+				</label>
+				<label>
+					<dt>r</dt>
+					<dd><input type="text" id="data-r"></dd>
+				</label>
+					<dt>N</dt>
+					<dd><input type="text" id="data-N"></dd>
+				</label>
+			</dl>
+		</form>
+	</div>
+</div>
+<div id="itemList"></div>
+<!-- <div class="item"><span class="P"></span><span class="interval"></span></div> -->
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+$(function() { "use strict";
+
+function normalcdf(X){   //HASTINGS.  MAX ERROR = .000001
+	var T=1/(1+.2316419*Math.abs(X));
+	var D=.3989423*Math.exp(-X*X/2);
+	var Prob=D*T*(.3193815+T*(-.3565638+T*(1.781478+T*(-1.821256+T*1.330274))));
+	if (X>0) {
+		Prob=1-Prob
+	}
+	return Prob
+}
+
+function solve_quadratic( a, b, c ) {
+	var D = b * b - 4 * a * c;
+	if ( D < 0 ) {
+		throw Error( "quadratic equation does not have real root" );
+	}
+
+	var rD = Math.sqrt( D );
+
+	return [ - (b + rD) / ( 2 * a ), (rD - b) / (2 * a ) ];
+}
+
+// P(|Z| <= k)
+// n(A) = a
+// n(A and B) = r
+// n(B) = N
+function guess_cardinality( k, a, r, N ) {
+	return solve_quadratic(
+		r * r,
+		- N * a * (2 * r + k * k),
+		N * a * a * (N + k * k)
+	);
+}
+
+$( "#data input" ).change(function() {
+	var a = parseInt( $( "#data-a" ).val(), 10);
+	var r = parseInt( $( "#data-r" ).val(), 10);
+	var N = parseInt( $( "#data-N" ).val(), 10);
+	var div = $( "#itemList" ).empty();
+
+	function display( k ) {
+		try {
+			var P = normalcdf( k ) * 2 - 1;
+			if ( P < 0 ) {
+				P = 0;
+			}
+			
+			var interval = guess_cardinality( k, a, r, N );
+
+			$( '<div class="item">' )
+				.append(
+					$( '<span class="P">' )
+						.text( (P * 100).toFixed( 6 ) + "%" )
+				)
+				.append(
+					$( '<span class="interval"> ')
+						.text( "[" + interval[ 0 ].toFixed( 6 ) + ", " + interval[ 1 ].toFixed( 6 ) + "]")
+				)
+				.appendTo( div );
+		}
+		catch ( _ ) {
+			// DivisionByZero 를 잡아냄
+		}
+	}
+
+	if ( a > 0 && r > 0 && N > 0 ) {
+		// 95%
+		display( 1.98 );
+
+		// 99%
+		display( 2.58 );
+
+		for ( var i = 0; i < 500; i++ ) {
+			var k = 0.01 * i;
+			display( k );
+		}
+	}
+});
+});
+</script>
+</body>
+</html>

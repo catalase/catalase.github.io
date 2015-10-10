@@ -2,135 +2,183 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<title>전역 일자 확인</title>
+	<script src="/jquery-1.11.3.min.js"></script>
+	<script src="/moment.js"></script>
+	<style>
+		@charset "utf-8";
+		/*상대 링크 꼭 확인!*/
+		@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
 
-	<title>쿠키런 사진 모음</title>
+		body {
+		    margin: 0;
+		    padding: 0;
+		    font-family: 'Spoqa Han Sans', 'Sans-serif';
+		}
 
-	<script src="/static/jquery-1.11.3.min.js"></script>
-	<script src="/static/moment.js"></script>
-	<script src="/static/script.js"></script>
+		h2 {
+		    margin: 0;
+		    font-size: 70px;
+		    font-weight: normal;
+		}
 
-	<link rel="stylesheet" href="/static/style.css">
+		.important {
+			/*vertical-align: super;*/
+			font-size: 76px;
+			font-weight: bold;
+		    /*text-decoration: underline;*/
+		}
+
+		.stage {
+		    margin-top: 20px;
+		    font-size: 60px;
+		    font-weight: bold;
+		    letter-spacing: 2px;
+		}
+
+		.wrap {
+		    position: relative;
+		    top: 50%;
+		    transform: translateY(-50%);
+		}
+
+		.army {
+		    padding: 30px;
+		    height: 940px;
+		    background-color: #E6005C;
+		    text-align: center;
+		}
+
+		.suneung {
+		    padding: 30px;
+		    height: 940px;
+		    background-color: #fbf3aa;
+		    text-align: center;
+		}
+	</style>
 </head>
 <body>
-
-<div class="stage"></div>
-<div class="stage-wrapper"></div>
-<div class="body">
-
-	
-	<div class="concealed">
-		쿠키런 새로운 세계 - 에피소드 4 마법사들의 도시 - 에피소드 선택시 브금(신비, 쿠키런)
-		<embed src="http://player.bgmstore.net/rB42J" allowscriptaccess="always" allowfullscreen="true" width="422" height="180"></embed><br><a href="http://bgmstore.net/view/rB42J">BGM정보 : 브금저장소 - http://bgmstore.net/view/rB42J</a>
+<div class="army">
+	<div class="wrap">
+		<h2>군대 <span class="important">전역</span> 까지</h2>
+		<div class="stage"></div>
 	</div>
-	
-
-	<p>
-		배경 음악이 재생되고 있다 행여나 소리 재생기가 없는 등의 이유로 감각하지 못하다면
-		<a href="http://bgmstore.net/view/rB42J">여기</a>를 눌러 뇌가 직접 재생하게 할 수 있다
-	</p>
-	<p>
-		음악 재생을 중단할 수 없게 되어 있다 정말로 끄기를 원하신다면 개발자 도구로 요소(element)를 지우십시오.
-	</p>
-
-	<img src="/static/images/2015-08-24-16-36-57.png" alt="2015-08-24-16-36-57.png">
-
-	<a href="https://github.com/catalase">https://github.com/catalase</a>
-	<p>위 링크에 현재 보고계시는 페이지 코드, irc 코드, 여러가지 저장소(repository)가 있다</p>
-
-	<img src="https://raw.githubusercontent.com/golang/go/master/doc/gopher/fiveyears.jpg">
-	<p>
-		지난 2015년 8월 19일, Go 1.5가 출시(relased)되었습니다.
-		<a href="http://blog.golang.org/go1.5">여기</a>에서 더욱 자세한 정보를 찾을 수 있다
-	</p>
-
-	<img src="/static/images/2015-08-24-16-39-41.png" alt="2015-08-24-16-39-41.png">
-
-	<p>Putty를 이용하여 ecmaxp.pe.kr:16822에 ssh를 통해 접속하실 수 있다. 유저 이름은 catalase이며 비밀번호는 내가 자주 쓰는 것으로 설정되어 있으며, 위 서버에서 irc 봇이 동작하고 있다</p>
-
-	<img src="/static/images/2015-08-24-16-39-50.png" alt="2015-08-24-16-39-50.png">
-	<img src="https://raw.githubusercontent.com/golang/go/master/doc/gopher/frontpage.png">
-	<p>이름은 Gopher이며 몸통이 긴 것이 특징이다.</p>
-
-	<img src="/static/images/2015-08-24-16-40-00.png" alt="2015-08-24-16-40-00.png">
-	<img src="/static/images/2015-08-24-16-40-09.png" alt="2015-08-24-16-40-09.png">
-	<img src="/static/images/dog.png">
-	<img src="/static/images/2015-08-24-16-40-53.png" alt="2015-08-24-16-40-53.png">
-	<img src="/static/images/daiju.jpg">
-	<p>열심히 공부하는 학생이다. 서울대 문 부술꺼라고 한다.</p>
-
-	<img src="/static/images/2015-08-24-16-41-05.png" alt="2015-08-24-16-41-05.png">
-	<img src="/static/images/s.png">
-	<img src="http://cfile25.uf.tistory.com/image/2138F53454E4BBAA1DC10C">
-	<img src="/static/images/2015-08-24-16-41-16.png" alt="2015-08-24-16-41-16.png">
-
-	<img src="http://image.slidesharecdn.com/boompromisesawasborn-130531134954-phpapp01/95/boom-promisesa-was-born-1-638.jpg?cb=1370008944">
-	<p>
-		Promise가 탄생한 것이 대사건이라는 의미이다. Promise에 대한 내용은 <a href="https://promisesaplus.com/">여기</a>에서 볼 수 있다
-	</p>
-
-	<img src="/static/images/2015-08-24-16-41-33.png" alt="2015-08-24-16-41-33.png">
-
-	<img src="http://pds25.egloos.com/pds/201301/13/87/a0009987_50f2ca8d4f7a2.jpg">
-	<p>어느 군인이 전역의 기쁨을 맛보고 있다.</p>
-
-	<img src="/static/images/2015-08-24-16-41-45.png" alt="2015-08-24-16-41-45.png">
-
-	<img src="https://newcdn.namu.wiki/r/http%3A%2F%2Fwww.bcmaeil.com%2Fboard%2Feditor%2Fuploaded%2Fimg%2F1256961884.jpg">
-	<p>미래에 권혁모가 갈지도 모르는 대학이다.</p>
-
-	<img src="/static/images/2015-08-24-16-42-02.png" alt="2015-08-24-16-42-02.png">
-	<img src="/static/images/2015-08-24-16-42-13.png" alt="2015-08-24-16-42-13.png">
-	<img src="/static/images/2015-08-24-16-42-27.png" alt="2015-08-24-16-42-27.png">
-	<img src="/static/images/2015-08-24-16-43-39.png" alt="2015-08-24-16-43-39.png">
-
-	<img src="http://image.slidesharecdn.com/2014-09redis-140922173831-phpapp01/95/20140922-redis-the-basics-viennadb-19-638.jpg?cb=1411407600">
-	<p>"HyperLogLog는 집합에 원소가 몇개 있는지 계산하는 근사적인 방법이다. 매우 작은 양의 메모리를 사용하면서 이를 해낸다. 예로 99%의 정확도를 위해 단지 16kb의 메모리밖에 요구하지 않는다." (cardinality는 집합의 원소 갯수를 의미함. 그러니까 즉 n(A)인데, 이 표기법은 한국에서만 쓰는 고립된(유명하지않은) 표기고 |A|로 씀)
-	</p>
-	<p>집합의 원소 갯수를 계산할 때, 확률을 통해 추정하는 방법 HyperLogLog 이 등장하였다. 예로 구글 검색 시 어림잡아 몇개가 검색되었는지 상단에 노출되는데, 이 수치는 정확하게 제공될 필요가 없기에 확률로 추정한 것이다. 이 외에도 몇 천만명이 방문하는 사이트의 경우 방문 기록을 조사하기 위하여 아이피를 수집한다면 아이피 수집으로 인하여 엄청난 공간 낭비가 발생할 것이다. 이런 경우에도 사용할 수 있다. 자세한 내용은 <a href="http://d2.naver.com/helloworld/711301">여기</a>를 참조하시길 바랍니다.</p>
-
-	<img src="/static/images/2015-08-24-16-46-42.png" alt="2015-08-24-16-46-42.png">
-	<img src="http://blog.joins.com/usr/d/yk/dykimriver/1502/54ed523a0eee8.jpg">
-	<img src="/static/images/2015-08-24-16-46-53.png" alt="2015-08-24-16-46-53.png">
-	<img src="/static/images/2015-08-24-16-47-23.png" alt="2015-08-24-16-47-23.png">
-	<img src="https://raw.githubusercontent.com/golang/go/master/doc/gopher/bumper640x360.png">
-	<img src="/static/images/2015-08-24-16-47-31.png" alt="2015-08-24-16-47-31.png">
-	<img src="/static/images/2015-08-24-16-47-49.png" alt="2015-08-24-16-47-49.png">
-	<img src="/static/images/2015-08-24-16-48-01.png" alt="2015-08-24-16-48-01.png">
-	<img src="https://raw.githubusercontent.com/golang/go/master/doc/gopher/biplane.jpg">
-	<img src="/static/images/2015-08-24-16-48-20.png" alt="2015-08-24-16-48-20.png">
-	<img src="/static/images/2015-08-24-16-48-32.png" alt="2015-08-24-16-48-32.png">
-	<img src="/static/images/2015-08-24-16-50-13.png" alt="2015-08-24-16-50-13.png">
-	<img src="https://raw.githubusercontent.com/golang/go/master/doc/gopher/appenginegopher.jpg">
-	<img src="/static/images/2015-08-24-16-51-04.png" alt="2015-08-24-16-51-04.png">
-	<img src="/static/images/2015-08-24-16-51-12.png" alt="2015-08-24-16-51-12.png">
-	<img src="/static/images/2015-08-24-16-51-20.png" alt="2015-08-24-16-51-20.png">
-	<img src="https://raw.githubusercontent.com/golang/go/master/doc/gopher/pencil/gopherrunning.jpg">
-	<img src="/static/images/2015-08-24-16-51-28.png" alt="2015-08-24-16-51-28.png">
-	<img src="/static/images/2015-08-24-16-53-55.png" alt="2015-08-24-16-53-55.png">
-	<img src="/static/images/2015-08-24-16-54-08.png" alt="2015-08-24-16-54-08.png">
-	<img src="https://raw.githubusercontent.com/golang/go/master/doc/gopher/pencil/gopherhat.jpg">
-	<img src="/static/images/2015-08-24-16-54-22.png" alt="2015-08-24-16-54-22.png">
-	<img src="/static/images/2015-08-24-16-56-01.png" alt="2015-08-24-16-56-01.png">
-	<img src="/static/images/2015-08-24-17-15-18.png" alt="2015-08-24-17-15-18.png">
-	<img src="https://raw.githubusercontent.com/golang/go/master/doc/gopher/pencil/gopherhelmet.jpg">
-	<img src="/static/images/2015-08-24-17-15-25.png" alt="2015-08-24-17-15-25.png">
-	<img src="/static/images/2015-08-24-17-15-38.png" alt="2015-08-24-17-15-38.png">
-	<img src="/static/images/2015-08-24-17-15-56.png" alt="2015-08-24-17-15-56.png">
-	<img src="https://raw.githubusercontent.com/golang/go/master/doc/gopher/pencil/gopherswrench.jpg">
-	<img src="/static/images/2015-08-24-17-16-14.png" alt="2015-08-24-17-16-14.png">
-	<img src="/static/images/2015-08-24-17-17-29.png" alt="2015-08-24-17-17-29.png">
-	<img src="/static/images/2015-08-24-17-17-46.png" alt="2015-08-24-17-17-46.png">
-	<img src="https://raw.githubusercontent.com/golang/go/master/doc/gopher/pencil/gopherswim.jpg">
-	<img src="/static/images/2015-08-24-17-19-14.png" alt="2015-08-24-17-19-14.png">
-	<img src="/static/images/2015-08-24-17-20-23.png" alt="2015-08-24-17-20-23.png">
-	<img src="/static/images/2015-08-24-17-21-17.png" alt="2015-08-24-17-21-17.png">
-	<img src="https://raw.githubusercontent.com/golang/go/master/doc/gopher/pencil/gophermega.jpg">
-	<img src="/static/images/2015-08-24-17-21-40.png" alt="2015-08-24-17-21-40.png">
-	<img src="/static/images/2015-08-24-17-21-50.png" alt="2015-08-24-17-21-50.png">
-	<img src="/static/images/2015-08-24-17-22-04.png" alt="2015-08-24-17-22-04.png">
-	<img src="https://raw.githubusercontent.com/golang/go/master/doc/gopher/appenginegophercolor.jpg">
-	<img src="/static/images/2015-08-24-17-22-17.png" alt="2015-08-24-17-22-17.png">
-
 </div>
+<div class="suneung">
+	<div class="wrap">
+		<h2>2015 <span class="important">수능</span> 까지</h2>
+		<div class="stage"></div>
+	</div>
+</div>
+<script>
+$(function () { "use strict";
+
+var _native_repeat = window.String.prototype.repeat;
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat
+// String.prototype.repeat 는 ECMAScript 2015 에 추가된 기능이며 experimental 상태이다.
+function repeat( str, n ) {
+    if ( $.isFunction( _native_repeat ) ) {
+        return _native_repeat.call( str, n );
+    }
+
+    var o = String();
+    for ( var i = 0; i < n; i++ ) {
+        o += str
+    }
+
+    return o;
+}
+
+function fillx( str, x, n ) {
+    if ( str.length < n ) {
+        return repeat(x, n - str.length) + str;
+    }
+
+    return str;
+}
+
+function zfill( str, n ) {
+    return fillx( str, "0", n );
+}
+
+function buildTimerText( d ) {
+    var o = String();
+
+    // o += zfill( d.years().toString(), 1 ) + "년 ";
+    // o += zfill( d.months().toString(), 2 ) + "월 ";
+    // o += zfill( d.days().toString(), 2 ) + "일 ";
+    // o += zfill( d.hours().toString(), 2 ) + "시 ";
+    // o += zfill( d.minutes().toString(), 2 ) + "분 ";
+    // o += zfill( d.seconds().toString(), 2 ) + "초 ";
+    // o += ".";
+    // o += zfill( d.milliseconds().toString(), 3 );
+
+    if ( d.years() > 0 ) {
+        o += d.years() + "년 ";
+    }
+
+    if ( d.months() > 0 ) {
+        o += d.months() + "월 ";
+    }
+
+    if ( d.days() > 0 ) {
+        o += d.days() + "일 ";
+    }
+
+    if ( d.hours() > 0 ) {
+        o += d.hours() + "시 ";
+    }
+
+    if ( d.minutes() > 0 ) {
+        o += zfill( d.minutes().toString(), 2 ) + "분 ";
+    }
+
+    o += zfill( d.seconds().toString(), 2 ) + "초 ";
+
+    o += ".";
+    o += zfill( d.milliseconds().toString(), 3);
+
+    return o;
+}
+
+jQuery.fn.extend({
+    timerize: function( exp, expFn, delay ) {
+        var self = this,
+            resource, expired;
+
+        if ( !$.isNumeric( delay ) ) {
+            delay = 1;
+        }
+
+        function timegoes() {
+            var d = moment.duration( exp - (new Date) );
+
+            if ( d > 0 ) {
+                // console.log( buildTimerText( d ) );
+                self.text( buildTimerText( d ) );
+            } else {
+                clearInterval( resource );
+                if ( $.isFunction( expFn ) ) {
+                    expFn.call( self );
+                }
+            }
+        }
+
+        timegoes();
+        resource = setInterval( timegoes, delay );
+    }
+})
+
+$( "div.army div.stage" ).timerize( new Date( 2017, 1, 28 ), function() {
+    $( this ).text( "군대 전역을 축하드립니다." );
+});
+
+// 2015, 11, 12
+$( "div.suneung div.stage" ).timerize( new Date( 2015, 10, 12), function() {
+    $( this ).text( "2015년도 수능이 끝났습니다." );
+});
+});
+</script>
 </body>
 </html>
